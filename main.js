@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Populate RESULTS (from my_images)
     const resultImages = [
-        'my_images/WhatsApp Image 2026-02-19 at 10.15.41 PM (1).jpeg',
         'my_images/WhatsApp Image 2026-02-19 at 10.15.41 PM (2).jpeg',
         'my_images/WhatsApp Image 2026-02-19 at 10.15.41 PM (3).jpeg',
         'my_images/WhatsApp Image 2026-02-19 at 10.15.41 PM (4).jpeg',
@@ -88,43 +87,21 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const resultsGrid = document.getElementById('main-gallery');
-    resultImages.forEach((src, index) => {
-        const item = document.createElement('div');
-        item.className = 'grid-item reveal';
-        item.innerHTML = `
-            <img src="${src}" alt="Profile Shot ${index + 1}">
-            <div class="item-overlay">
-                <span style="color: var(--primary-gold); font-size: 0.7rem; letter-spacing: 2px;">ELITE PHYSIQUE</span>
-                <h3 style="font-size: 1.2rem; margin-top: 5px;">SHOT 0${index + 1}</h3>
-            </div>
-        `;
-        resultsGrid.appendChild(item);
-        revealObserver.observe(item);
-    });
-
-    // 2. Populate ACHIEVEMENTS (from images folder)
-    const achievementImages = [
-        'Images/WhatsApp Image 2026-02-10 at 7.26.06 PM (1).jpeg',
-        'Images/WhatsApp Image 2026-02-10 at 7.26.06 PM (2).jpeg',
-        'Images/WhatsApp Image 2026-02-10 at 7.26.06 PM (3).jpeg',
-        'Images/WhatsApp Image 2026-02-10 at 7.26.06 PM.jpeg',
-        'Images/WhatsApp Image 2026-02-10 at 7.30.42 PM.jpeg'
-    ];
-
-    const achievementGrid = document.getElementById('achievements-gallery');
-    achievementImages.forEach((src, index) => {
-        const item = document.createElement('div');
-        item.className = 'grid-item reveal';
-        item.innerHTML = `
-            <img src="${src}" alt="Achievement ${index + 1}">
-            <div class="item-overlay">
-                <span style="color: var(--primary-gold); font-size: 0.7rem; letter-spacing: 2px;">ACHIEVEMENT</span>
-                <h3 style="font-size: 1.2rem; margin-top: 5px;">MILESTONE 0${index + 1}</h3>
-            </div>
-        `;
-        achievementGrid.appendChild(item);
-        revealObserver.observe(item);
-    });
+    if (resultsGrid) {
+        resultImages.forEach((src, index) => {
+            const item = document.createElement('div');
+            item.className = 'grid-item reveal';
+            item.innerHTML = `
+                <img src="${src}" alt="Profile Shot ${index + 1}">
+                <div class="item-overlay">
+                    <span style="color: var(--primary-gold); font-size: 0.7rem; letter-spacing: 2px;">ELITE PHYSIQUE</span>
+                    <h3 style="font-size: 1.2rem; margin-top: 5px;">SHOT 0${index + 1}</h3>
+                </div>
+            `;
+            resultsGrid.appendChild(item);
+            revealObserver.observe(item);
+        });
+    }
 
     // 3. Populate CERTIFICATES (from certificates folder)
     const certificateImages = [
@@ -140,21 +117,24 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const certSlider = document.getElementById('cert-slider');
-    certificateImages.forEach((src, index) => {
-        const card = document.createElement('div');
-        card.className = 'slider-card reveal';
-        card.innerHTML = `
-            <div class="card-img-wrap">
-                <img src="${src}" alt="Professional Certification ${index + 1}">
-            </div>
-            <div style="padding: 10px;">
-                <span style="color: var(--primary-gold); font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase;">Validated Credential</span>
-                <h4 style="font-size: 0.9rem; margin-top: 5px; font-family: 'Syncopate';">ACCREDITATION 0${index + 1}</h4>
-            </div>
-        `;
-        certSlider.appendChild(card);
-        revealObserver.observe(card);
-    });
+    if (certSlider) {
+        certificateImages.forEach((src, index) => {
+            const card = document.createElement('div');
+            card.className = 'slider-card reveal';
+            card.innerHTML = `
+                <div class="card-img-wrap">
+                    <img src="${src}" alt="Professional Certification ${index + 1}">
+                </div>
+                <div style="padding: 10px;">
+                    <span style="color: var(--primary-gold); font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase;">Validated Credential</span>
+                    <h4 style="font-size: 0.9rem; margin-top: 5px; font-family: 'Syncopate';">ACCREDITATION 0${index + 1}</h4>
+                </div>
+            `;
+            certSlider.appendChild(card);
+            revealObserver.observe(card);
+        });
+    }
+
 
     // WhatsApp Enquiry Integration
     const contactForm = document.querySelector('.contact-form');
