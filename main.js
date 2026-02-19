@@ -92,10 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const item = document.createElement('div');
         item.className = 'grid-item reveal';
         item.innerHTML = `
-            <img src="${src}" alt="Transformation Result ${index + 1}">
+            <img src="${src}" alt="Profile Shot ${index + 1}">
             <div class="item-overlay">
-                <span style="color: var(--primary-gold); font-size: 0.7rem; letter-spacing: 2px;">TRANSFORMATION</span>
-                <h3 style="font-size: 1.2rem; margin-top: 5px;">RESULT 0${index + 1}</h3>
+                <span style="color: var(--primary-gold); font-size: 0.7rem; letter-spacing: 2px;">ELITE PHYSIQUE</span>
+                <h3 style="font-size: 1.2rem; margin-top: 5px;">SHOT 0${index + 1}</h3>
             </div>
         `;
         resultsGrid.appendChild(item);
