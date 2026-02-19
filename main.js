@@ -103,6 +103,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 2. Populate TRANSFORMATIONS (from images folder)
+    const transformImages = [
+        'Images/WhatsApp Image 2026-02-10 at 7.26.06 PM (1).jpeg',
+        'Images/WhatsApp Image 2026-02-10 at 7.26.06 PM (2).jpeg',
+        'Images/WhatsApp Image 2026-02-10 at 7.26.06 PM (3).jpeg',
+        'Images/WhatsApp Image 2026-02-10 at 7.26.06 PM.jpeg',
+        'Images/WhatsApp Image 2026-02-10 at 7.30.42 PM.jpeg'
+    ];
+
+    const transformGrid = document.getElementById('transform-gallery');
+    if (transformGrid) {
+        transformImages.forEach((src, index) => {
+            const item = document.createElement('div');
+            item.className = 'grid-item reveal';
+            item.innerHTML = `
+                <img src="${src}" alt="Client Transformation ${index + 1}">
+                <div class="item-overlay">
+                    <span style="color: var(--primary-gold); font-size: 0.7rem; letter-spacing: 2px;">TRANSFORMATION</span>
+                    <h3 style="font-size: 1.2rem; margin-top: 5px;">CLIENT 0${index + 1}</h3>
+                </div>
+            `;
+            transformGrid.appendChild(item);
+            revealObserver.observe(item);
+        });
+    }
+
+
     // 3. Populate CERTIFICATES (from certificates folder)
     const certificateImages = [
         'Certificates/WhatsApp Image 2026-02-10 at 7.26.06 PM (1).jpeg',
