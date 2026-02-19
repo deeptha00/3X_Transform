@@ -109,7 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'Client_Transformation/WhatsApp Image 2026-02-19 at 11.07.19 PM.jpeg',
         'Client_Transformation/WhatsApp Image 2026-02-19 at 11.12.22 PM.jpeg',
         'Client_Transformation/WhatsApp Image 2026-02-19 at 11.12.23 PM (1).jpeg',
-        'Client_Transformation/WhatsApp Image 2026-02-19 at 11.12.23 PM.jpeg'
+        'Client_Transformation/WhatsApp Image 2026-02-19 at 11.12.23 PM.jpeg',
+        'Client_Transformation/WhatsApp Image 2026-02-19 at 11.18.57 PM.jpeg',
+        'Client_Transformation/WhatsApp Image 2026-02-19 at 11.20.07 PM.jpeg'
     ];
 
     const transformGrid = document.getElementById('transform-gallery');
