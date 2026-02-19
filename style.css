@@ -580,14 +580,34 @@ footer {
 }
 
 @media (max-width: 1024px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+        padding-top: 100px;
+    }
+
     .hero-visual {
-        display: none;
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 400px;
+        order: -1;
+    }
+
+    .hero-visual img {
+        object-position: center top;
+        filter: grayscale(0.2) contrast(1.1);
+    }
+
+    .hero-visual::after {
+        background: linear-gradient(to top, var(--primary-black) 0%, transparent 40%);
     }
 
     .hero-content {
         width: 100%;
         text-align: center;
-        padding: 0 20px;
+        padding: 40px 20px;
     }
 
     .hero-headline {
