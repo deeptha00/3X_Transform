@@ -103,13 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Populate TRANSFORMATIONS (from images folder)
+    // 2. Populate TRANSFORMATIONS (from Client_Transformation folder)
     const transformImages = [
-        'Images/WhatsApp Image 2026-02-10 at 7.26.06 PM (1).jpeg',
-        'Images/WhatsApp Image 2026-02-10 at 7.26.06 PM (2).jpeg',
-        'Images/WhatsApp Image 2026-02-10 at 7.26.06 PM (3).jpeg',
-        'Images/WhatsApp Image 2026-02-10 at 7.26.06 PM.jpeg',
-        'Images/WhatsApp Image 2026-02-10 at 7.30.42 PM.jpeg'
+        'Client_Transformation/WhatsApp Image 2026-02-19 at 10.54.21 PM.jpeg',
+        'Client_Transformation/WhatsApp Image 2026-02-19 at 11.07.19 PM.jpeg',
+        'Client_Transformation/WhatsApp Image 2026-02-19 at 11.12.22 PM.jpeg',
+        'Client_Transformation/WhatsApp Image 2026-02-19 at 11.12.23 PM (1).jpeg',
+        'Client_Transformation/WhatsApp Image 2026-02-19 at 11.12.23 PM.jpeg'
     ];
 
     const transformGrid = document.getElementById('transform-gallery');
@@ -125,6 +125,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             transformGrid.appendChild(item);
+            revealObserver.observe(item);
+        });
+    }
+
+    // 2.5. Populate COMMON (from Common_Images folder)
+    const commonImages = [
+        'Common_Images/WhatsApp Image 2026-02-10 at 7.26.06 PM (1).jpeg',
+        'Common_Images/WhatsApp Image 2026-02-10 at 7.26.06 PM (2).jpeg',
+        'Common_Images/WhatsApp Image 2026-02-10 at 7.26.06 PM (3).jpeg',
+        'Common_Images/WhatsApp Image 2026-02-10 at 7.26.06 PM.jpeg',
+        'Common_Images/WhatsApp Image 2026-02-10 at 7.30.42 PM.jpeg'
+    ];
+
+    const commonGrid = document.getElementById('common-gallery');
+    if (commonGrid) {
+        commonImages.forEach((src, index) => {
+            const item = document.createElement('div');
+            item.className = 'grid-item reveal';
+            item.innerHTML = `
+                <img src="${src}" alt="Common Shot ${index + 1}">
+                <div class="item-overlay">
+                    <span style="color: var(--primary-gold); font-size: 0.7rem; letter-spacing: 2px;">LIFESTYLE</span>
+                    <h3 style="font-size: 1.2rem; margin-top: 5px;">COMMON 0${index + 1}</h3>
+                </div>
+            `;
+            commonGrid.appendChild(item);
             revealObserver.observe(item);
         });
     }
